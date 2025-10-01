@@ -1,2 +1,36 @@
 Docker Refresher:
 -----------------
+image = Blueprint / Template (like an iso file)
+container = running instances of image(like VM running from ISO)
+Dockerfile = Recipe to build images
+registry = storage for images (DockerHub, ECR, GCR etc..)
+
+Source Code --> Dockerfile  --> Image --->registry ---> Container.
+
+And u can pull image from Dockerhub and run as container.
+
+docker commands:
+------------------
+
+docker --version (check version)
+docker run hello-world (here hello world is an image, pull the image and start the container.)
+docker ps  (to check all the running containers)
+docker ps -a (to check stopped container)
+docker rmi imagename  (which will remove image)
+docker stop containId 
+docker start containerID
+docker pull imagename (pull froms dockerhub)
+docker push imagename (pushes to dockerhub)
+docker images (to check available images locally)
+docker logs containerID (logs of a container)
+
+docker exec -it containerId/Name /bin/bash (allows into interactive shell of container)
+docker system prune (which removed all unused containers, volumes, netwroks etc..)
+docker login 
+docker build -t testImage . (docker file location with image name)
+
+docker file name is case sensitive (Always use upper case D, Dockerfile)
+
+Dockerfile is written as Instruction and arguments..
+
+docker run -d -p 5000:5000 --name test imagename 
